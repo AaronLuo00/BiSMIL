@@ -1,5 +1,3 @@
-# BiSMIL
-
 # Towards Interpretable, Sequential Multiple Instance Learning: An Application to Clinical Imaging
 
 ## Introduction
@@ -9,9 +7,11 @@ This work introduces the Sequential Multiple Instance Learning (SMIL) framework,
 
 ### Download
 - The **RSNA** dataset used in this paper can be download via [Kaggle Challenge Dataset](https://www.kaggle.com/competitions/rsna-intracranial-hemorrhage-detection/data)
+  -  Preprocessed Dataset: https://drive.google.com/drive/folders/1NKmR38EggLHxL8bmbgVlgGE0u9fqamrf?usp=sharing
 - The **Covid** dataset used in this paper can be download via https://www.synapse.org/#%21Synapse:syn22174850
+  -  Preprocessed Dataset: https://drive.google.com/drive/folders/1NKmR38EggLHxL8bmbgVlgGE0u9fqamrf?usp=sharing
 
-## 1. Install Requirements: 
+## Install Requirements: 
 ```
 conda create -n BiSMIL python=3.10
 conda activate BiSMIL
@@ -19,9 +19,18 @@ pip install -r requirements.txt
 ```
 
 
+
 ## Usage
 
+`Covid_loader.py`: Generates training, validation and test loader from original Covid dataset. A bag is given a positive label if the patient belong to the "Covid" or "Other" class.
+If run as main, it computes the ratio of positive bags as well as the mean, max and min value for the number per instances in a bag.
 
+`RSNA_loader.py`: Generates training, validation and test loader from original RSNA dataset. There are five types of brain hemorrhage denoted in the dataset, and we create the bag-level binary label where a positive label indicates if any of the five types of hemorrhage is present.
+
+`main.py`: Trains a model with the Adam optimization algorithm.
+The training takes 40 epochs. Last, the accuracy and loss of the model on the test set is computed, and the trained model is saved.
+
+`model.py`: Implementation of SiSMIL, BiSMIL, Attention Pooling, Max Pooling, and SA_DMIL model. The Incremental Prediction is  implemented inside of the SiSMIL model.
 
 
 ## Contributors
