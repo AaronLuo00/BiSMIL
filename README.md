@@ -19,7 +19,6 @@ pip install -r requirements.txt
 ```
 
 
-
 ## Usage
 
 `Covid_loader.py`: Generates training, validation and test loader from original Covid dataset. A bag is given a positive label if the patient belong to the "Covid" or "Other" class.
@@ -27,10 +26,12 @@ If run as main, it computes the ratio of positive bags as well as the mean, max 
 
 `RSNA_loader.py`: Generates training, validation and test loader from original RSNA dataset. There are five types of brain hemorrhage denoted in the dataset, and we create the bag-level binary label where a positive label indicates if any of the five types of hemorrhage is present.
 
-`main.py`: Trains a model with the Adam optimization algorithm.
+`train_and_test.py`: Train a model with the Adam optimization algorithm, and then perform validation and test.
 The training takes 40 epochs. Last, the accuracy and loss of the model on the test set is computed, and the trained model is saved.
 
 `model.py`: Implementation of SiSMIL, BiSMIL, Attention Pooling, Max Pooling, and SA_DMIL model. The Incremental Prediction is  implemented inside of the SiSMIL model.
+
+`uncertainty.py`: Implementation of SMILU.
 
 
 ## Contributors
