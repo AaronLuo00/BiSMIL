@@ -15,7 +15,7 @@ This work introduces the Sequential Multiple Instance Learning (SMIL) framework,
 ```
 conda create -n BiSMIL python=3.10
 conda activate BiSMIL
-pip install -r requirements.txt
+conda install scikit-learn numpy scipy openpyxl seaborn matplotlib pillow tqdm networkx
 ```
 
 
