@@ -19,7 +19,7 @@ def initialize_training(config):
     para = config['parameters']
     model_class = config["model_class"]  # 
     loss_func = nn.BCELoss()
-    if "Pooling" in para['experiment_name'] :
+    if ("ADMIL" in para['experiment_name']) or ("Pooling" in para['experiment_name']) :
         model = model_class()
     elif ("SiSMIL" in para['experiment_name']) or ("BiSMIL" in para['experiment_name']):
         model = model_class(feature_dim=config['feature_dim'], num_heads=para['num_heads'], 
